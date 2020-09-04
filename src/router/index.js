@@ -10,6 +10,10 @@ const router = new VueRouter({
         {
             path: '/home',
             component: () => import('views/home/Home')
+        },
+        {
+            path: '/category',
+            component: () => import('views/category/Category')
         }
     ]
 })

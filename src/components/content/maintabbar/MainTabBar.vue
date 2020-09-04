@@ -1,8 +1,12 @@
 <template>
   <tab-bar>
-    <tab-bar-item>
+    <tab-bar-item path="/home">
       <img src="~assets/img/tabbar/home.svg" slot="image" alt />
       <div slot="text">Home</div>
+    </tab-bar-item>
+    <tab-bar-item path="/category">
+      <img src="~assets/img/tabbar/category.svg" slot="image" alt />
+      <div slot="text">Category</div>
     </tab-bar-item>
   </tab-bar>
 </template>
