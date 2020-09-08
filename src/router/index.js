@@ -14,7 +14,16 @@ const router = new VueRouter({
         {
             path: '/category',
             component: () => import('views/category/Category')
+        },
+        {
+            path: '/cart',
+            component: () => import('views/cart/Cart')
+        },
+        {
+            path: '/profile',
+            component: () => import('views/profile/Profile')
         }
+
     ]
 })
 

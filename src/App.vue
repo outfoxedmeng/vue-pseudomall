@@ -7,6 +7,7 @@
 
 <script>
 import MainTabBar from "components/content/maintabbar/MainTabBar";
+import { request } from "network/request";
 
 export default {
   name: "App",
@@ -17,4 +18,5 @@ export default {
 </script>
 
 <style>
+@import "assets/css/base.css";
 </style>

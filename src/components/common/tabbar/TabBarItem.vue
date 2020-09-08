@@ -1,7 +1,10 @@
 <template>
   <div class="tab-bar-item" @click="itemClick()">
-    <div class="item-img">
-      <slot name="image"></slot>
+    <div v-if="isActived">
+      <slot name="item-icon-actived"></slot>
+    </div>
+    <div v-else>
+      <slot name="item-icon"></slot>
     </div>
     <div class="item-text" :style="activeStyle">
       <slot name="text"></slot>
@@ -16,6 +19,10 @@ export default {
       type: String,
       default: "/home",
     },
+    activeColor: {
+      type: String,
+      default: "red",
+    },
   },
   methods: {
     itemClick() {
@@ -27,7 +34,7 @@ export default {
       return this.$route.path.indexOf(this.path) !== -1;
     },
     activeStyle() {
-      return this.isActived ? { color: "red" } : {};
+      return this.isActived ? { color: this.activeColor } : {};
     },
   },
 };
@@ -36,10 +43,15 @@ export default {
 .tab-bar-item {
   flex: 1;
   text-align: center;
+  height: 49px;
+  font-size: 14px;
 }
 
-.tab-bar-item .item-img img {
-  height: 24px;
+.tab-bar-item img {
   width: 24px;
+  height: 24px;
+  margin-top: 3px;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 </style>
